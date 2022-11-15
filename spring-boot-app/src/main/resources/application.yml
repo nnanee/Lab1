@@ -3,7 +3,7 @@
 server.servlet.context-path: /java
 
 # URL to node app
-app.node.url: http://localhost:8081/
+app.node.url: http://node:8081/
 
 spring:
   jpa:
@@ -11,6 +11,6 @@ spring:
       temp.use_jdbc_metadata_defaults: false
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/demodb
+    url: jdbc:postgresql://db:5432/demodb
     username: demouser
-    password: DemoPa$$
+    password: DemoPa
