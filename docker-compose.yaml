@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  node:
+    build: node-app
+    restart: always
+    ports:
+    - "8081"
+
+  app:
+    build: spring-boot-app
+    restart: always
+    ports:
+    - "8080:8080"
+
+
+  db:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=demouser
+      - POSTGRES_PASSWORD=DemoPa
+      - POSTGRES_DB=demodb
+    ports:
+      - '5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
